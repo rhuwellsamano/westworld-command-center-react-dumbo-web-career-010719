@@ -3,7 +3,6 @@ import { Segment, Image } from 'semantic-ui-react'
 import * as Images from '../services/Images'
 import HostInfo from './HostInfo'
 
-
 const Details = (props) => {
 
   console.log('Details Props:', props)

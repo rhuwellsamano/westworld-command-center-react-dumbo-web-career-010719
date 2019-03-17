@@ -3,11 +3,9 @@ import '../stylesheets/Headquarters.css';
 import {Grid} from 'semantic-ui-react';
 import Details from './Details'
 import ColdStorage from './ColdStorage'
-// import HostInfo from './HostInfo'
 import LogPanel from './LogPanel'
 
 class Headquarters extends Component {
-  // Remember, there's many ways to do this. This doesn't have to be a class component. It's up to you.
 
   render() {
 
