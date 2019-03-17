@@ -10,6 +10,7 @@ const Host = (props) => {
   return(
     <Card
       className="host"
+      onClick={() => props.clickHandler(props.host)}
       image={props.host.imageUrl}
       raised
     />

@@ -2,17 +2,17 @@ import React from 'react';
 import '../stylesheets/Area.css'
 import HostList from './HostList'
 
-const Area = (props) => (
+const Area = (props) => {
+  const {id, name} = props.area
+  const areaName = name.split('_').map(string =>    string.charAt(0).toUpperCase() + string.slice(1)).join(' ')
 
-  <div className='area' id={props.area.name}>
-    <h3 className='labels'>{/* Don't just pass in the name from the data...clean that thing up */ props.area.name}</h3>
-
-    {/* See Checkpoint 1 item 2 in the Readme for a clue as to what goes here */}
-    <HostList hosts={props.hosts}/>
-
-  </div>
-
-)
+  return (
+    <div className='area' id={name}>
+      <h3 className='labels'>{areaName}</h3>
+      <HostList hosts={props.hosts} selectedHost={props.selectedHost} clickHandler={props.clickHandler}/>
+    </div>
+  )
+}
 
 Area.propTypes = {
   hosts: function(props, propName, componentName){

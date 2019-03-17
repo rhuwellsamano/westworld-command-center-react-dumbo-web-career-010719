@@ -4,10 +4,18 @@ import Area from './Area'
 
 
 const WestworldMap = (props) => {
-  let areas = props.areas.map(area => <Area area={area} hosts={props.hosts}/>)
+  const areas = props.areas.map(area => {
+    return (
+      <Area key={area.id}
+        area={area}
+        hosts={props.hosts.filter(host => {
+          return area.name === host.area && host.active === true
+        })}
+        selectedHost={props.selectedHost}
+        clickHandler={props.clickHandler}/>)
+  })
 
   return (
-
     <Segment id="map" >
       {areas}
     </Segment>
