@@ -20,14 +20,14 @@ pre {
   white-space: pre-wrap;
 }
 
-.error {
+.error, .ERROR {
   color: red;
 }
 
-.warn {
+.warn, .WARN {
   color: orange;
 }
 
-.notify {
+.notify, .NOTIFY {
   color: black;
 }

@@ -4,7 +4,7 @@ import HostList from './HostList'
 
 const Area = (props) => {
   const {id, name} = props.area
-  const areaName = name.split('_').map(string =>    string.charAt(0).toUpperCase() + string.slice(1)).join(' ')
+  const areaName = name.split('_').map(string => string.charAt(0).toUpperCase() + string.slice(1)).join(' ')
 
   return (
     <div className='area' id={name} key={id}>

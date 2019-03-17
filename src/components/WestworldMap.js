@@ -12,7 +12,8 @@ const WestworldMap = (props) => {
           return area.name === host.area && host.active === true
         })}
         selectedHost={props.selectedHost}
-        clickHandler={props.clickHandler}/>)
+        clickHandler={props.clickHandler}
+        />)
   })
 
   return (
