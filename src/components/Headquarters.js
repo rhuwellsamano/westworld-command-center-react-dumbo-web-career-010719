@@ -4,7 +4,7 @@ import {Grid} from 'semantic-ui-react';
 import Details from './Details'
 import ColdStorage from './ColdStorage'
 import HostInfo from './HostInfo'
-// import LogPanel from './LogPanel'
+import LogPanel from './LogPanel'
 
 class Headquarters extends Component {
   // Remember, there's many ways to do this. This doesn't have to be a class component. It's up to you.
@@ -23,12 +23,12 @@ class Headquarters extends Component {
 
         <Details
           areas={this.props.areas}
-          hosts={this.props.inactiveHosts} selectedHost={this.props.selectedHost} toggleHandler={this.props.toggleHandler} />
+          hosts={this.props.inactiveHosts} selectedHost={this.props.selectedHost} toggleHandler={this.props.toggleHandler} AreaChangeHandler={this.props.AreaChangeHandler}/>
 
       </Grid.Column>
       <Grid.Column width={3}>
 
-        LogPanel will go here {/* <LogPanel/> */}
+        <LogPanel toggleAllHandler={this.props.toggleAllHandler} logs={this.props.logs} />
 
       </Grid.Column>
     </Grid>)

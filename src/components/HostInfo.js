@@ -5,6 +5,13 @@ import { Radio, Icon, Card, Grid, Image, Dropdown, Divider } from 'semantic-ui-r
 
 class HostInfo extends Component {
 
+  areaName = (name) => name.split('_').map(string => string.charAt(0).toUpperCase() + string.slice(1)).join(' ')
+
+  state = {
+    options: this.props.areas.map(area => ({key: area.name, text: this.areaName(area.name), value: area.name})),
+    value: this.props.selectedHost.area
+  }
+
   // This state is just to show how the dropdown component works.
   // Options have to be formatted in this way (array of objects with keys of: key, text, value)
   // Value has to match the value in the object to render the right text.
@@ -13,13 +20,15 @@ class HostInfo extends Component {
 
 
   handleChange = (e, {value}) => {
-    // the 'value' attribute is given via Semantic's Dropdown component.
-    // Put a debugger in here and see what the "value" variable is when you pass in different options.
-    // See the Semantic docs for more info: https://react.semantic-ui.com/modules/dropdown/#usage-controlled
+    // note: in the params above, 'value' is the area selected from dropdown onchange
+    this.props.AreaChangeHandler(value, this.props.selectedHost)
+
+    this.props.areas.find(area => area.name === value)
   }
 
   toggle = () => {
-    this.props.toggleHandler(this.props.host)
+    console.log("The radio button fired");
+    this.props.toggleHandler(this.props.selectedHost)
   }
 
   render(){
@@ -41,7 +50,6 @@ class HostInfo extends Component {
             <Card.Content>
               <Card.Header>
                 {firstName} | { gender === 'Male' ? <Icon name='man' /> : <Icon name='woman' />}
-                { /* Think about how the above should work to conditionally render the right First Name and the right gender Icon */ }
               </Card.Header>
               <Card.Meta>
                 <Radio
@@ -54,12 +62,12 @@ class HostInfo extends Component {
 
               <Divider />
               Current Area:
-              {/*<Dropdown
+              <Dropdown
                 onChange={this.handleChange}
-                value={this.state.value}
+                value={area}
                 options={this.state.options}
                 selection
-              />*/}
+              />
             </Card.Content>
           </Card>
         </Grid.Column>
