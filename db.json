@@ -139,32 +139,32 @@
     "areas": [
       { "id": 1,
         "name": "high_plains",
-        "limit": 8,
+        "limit": 4,
         "auth_req": false
       },
       { "id": 2,
         "name": "lowlands",
-        "limit": 6,
+        "limit": 5,
         "auth_req": false
       },
       { "id": 3,
         "name": "under_construction",
-        "limit": 8,
+        "limit": 4,
         "auth_req": true
       },
       { "id": 4,
         "name": "pariah",
-        "limit": 14,
+        "limit": 7,
         "auth_req": false
       },
       { "id": 5,
         "name": "python_pass",
-        "limit": 14,
+        "limit": 6,
         "auth_req": false
       },
       { "id": 6,
         "name": "badlands",
-        "limit": 10,
+        "limit": 6,
         "auth_req": false
       }
     ]

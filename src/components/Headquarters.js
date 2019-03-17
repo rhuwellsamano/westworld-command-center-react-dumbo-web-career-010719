@@ -3,7 +3,7 @@ import '../stylesheets/Headquarters.css';
 import {Grid} from 'semantic-ui-react';
 import Details from './Details'
 import ColdStorage from './ColdStorage'
-import HostInfo from './HostInfo'
+// import HostInfo from './HostInfo'
 import LogPanel from './LogPanel'
 
 class Headquarters extends Component {
@@ -16,14 +16,14 @@ class Headquarters extends Component {
     return (<Grid celled='internally'>
       <Grid.Column width={8}>
 
-        <ColdStorage areas={this.props.areas} hosts={inactiveHosts} current={this.props.current} clickHandler={this.props.clickHandler}/>
+        <ColdStorage areas={this.props.areas} hosts={inactiveHosts} current={this.props.current} clickHandler={this.props.clickHandler} selectedHost={this.props.selectedHost}/>
 
       </Grid.Column>
       <Grid.Column width={5}>
 
         <Details
           areas={this.props.areas}
-          hosts={this.props.inactiveHosts} selectedHost={this.props.selectedHost} toggleHandler={this.props.toggleHandler} AreaChangeHandler={this.props.AreaChangeHandler}/>
+          hosts={this.props.inactiveHosts} selectedHost={this.props.selectedHost} toggleHandler={this.props.toggleHandle} AreaChangeHandler={this.props.AreaChangeHandler}/>
 
       </Grid.Column>
       <Grid.Column width={3}>

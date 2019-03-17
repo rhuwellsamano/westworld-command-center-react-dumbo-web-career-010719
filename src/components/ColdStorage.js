@@ -9,7 +9,7 @@ const ColdStorage = (props) => (
     </Segment>
     <Segment compact>
 
-      <HostList hosts={props.hosts} current={props.current} clickHandler={props.clickHandler}/>
+      <HostList hosts={props.hosts} current={props.current} clickHandler={props.clickHandler} selectedHost={props.selectedHost}/>
 
     </Segment>
   </Segment.Group>

@@ -7,7 +7,7 @@ const Area = (props) => {
   const areaName = name.split('_').map(string =>    string.charAt(0).toUpperCase() + string.slice(1)).join(' ')
 
   return (
-    <div className='area' id={name}>
+    <div className='area' id={name} key={id}>
       <h3 className='labels'>{areaName}</h3>
       <HostList hosts={props.hosts} selectedHost={props.selectedHost} clickHandler={props.clickHandler}/>
     </div>

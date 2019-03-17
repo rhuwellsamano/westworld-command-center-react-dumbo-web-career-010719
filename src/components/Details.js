@@ -6,7 +6,7 @@ import HostInfo from './HostInfo'
 
 const Details = (props) => {
 
-  console.log('updated area to:', props)
+  console.log('Details Props:', props)
 
   const renderSomething = () => (<Image size='medium' src={Images.westworldLogo}/>)
 

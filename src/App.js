@@ -59,11 +59,21 @@ class App extends Component {
 }
 
   AreaChangeHandler = (newArea, selectedHost) => {
+    console.log('Selected Host:', selectedHost)
+    console.log('New Area:', newArea)
+
     let hostsList = [...this.state.hosts]
     let hostToChangeArea = hostsList.find(hostObj => hostObj.id === selectedHost.id)
     let areaObj = this.state.areas.find(area => area.name === newArea)
-    let numOfHostsInArea = hostsList.filter(host => selectedHost.area === newArea).length
-      {numOfHostsInArea < areaObj.limit ? hostToChangeArea.area = newArea : null}
+    let numOfHostsInArea = hostsList.filter(hostObj => hostObj.area === newArea).length
+
+    // debugger
+
+// eslint-disable-next-line
+    {numOfHostsInArea < areaObj.limit ? hostToChangeArea.area = newArea : null}
+
+    console.log('Number of Hosts in Area:', numOfHostsInArea)
+    console.log('AreaObj Limit:', areaObj.limit)
 
     // let log = numHostsInArea < areaObj.limit ? Log.notify(`${host.firstName} set in area ${this.cleanName(newArea)}`) : Log.error(`Too many hosts. Cannot add ${host.firstName} to ${this.cleanName(newArea)}`)
     // this.addLog(log)

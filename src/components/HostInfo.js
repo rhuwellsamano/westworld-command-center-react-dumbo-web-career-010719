@@ -39,7 +39,7 @@ class HostInfo extends Component {
       <Grid>
         <Grid.Column width={6}>
           <Image
-            src={this.props.selectedHost.imageUrl}
+            src={imageUrl}
             floated='left'
             size='small'
             className="hostImg"
